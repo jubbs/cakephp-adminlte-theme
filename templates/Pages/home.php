@@ -525,7 +525,7 @@
   <!-- Daterange picker -->
   <?php echo $this->Html->css('AdminLTE./bower_components/bootstrap-daterangepicker/daterangepicker', ['block' => 'css']); ?>
   <!-- bootstrap wysihtml5 - text editor -->
-  <?php echo $this->Html->css('AdminLTE./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min', ['block' => 'css']); ?>
+  
 
 <!-- jQuery UI 1.11.4 -->
 <?php echo $this->Html->script('AdminLTE./bower_components/jquery-ui/jquery-ui.min', ['block' => 'script']); ?>
