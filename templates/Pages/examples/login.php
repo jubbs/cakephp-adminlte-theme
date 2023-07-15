@@ -7,18 +7,18 @@ $this->layout = 'AdminLTE.login'; ?>
 <div class="card">
   <div class="card-body login-card-body">
     <p class="login-box-msg">Sign in to start your session</p>
-
-    <form action="AdminLTE./index3.html" method="post">
+    <?= $this->Flash->render() ?>
+    <?= $this->Form->create(null) ?>
       <div class="input-group mb-3">
-        <input type="email" class="form-control" placeholder="Email">
-        <div class="input-group-append">
+      <?= $this->Form->email('username', [ 'required' => true, 'label' => '', 'class'=>'form-control', 'placeholder' => 'Email or Username']) ?>
+      <div class="input-group-append">
           <div class="input-group-text">
             <span class="fas fa-envelope"></span>
           </div>
         </div>
       </div>
       <div class="input-group mb-3">
-        <input type="password" class="form-control" placeholder="Password">
+      <?= $this->Form->pasword('username', ['required' => true, 'label' => '', 'class'=>'form-control', 'placeholder' => 'Password']) ?>
         <div class="input-group-append">
           <div class="input-group-text">
             <span class="fas fa-lock"></span>
@@ -36,11 +36,16 @@ $this->layout = 'AdminLTE.login'; ?>
         </div>
         <!-- /.col -->
         <div class="col-4">
-          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          <?php echo $this->Form->submit('Sign In', ['class'=>'btn btn-primary btn-block']); ?>
         </div>
+        <?= $this->Form->end() ?>
         <!-- /.col -->
       </div>
     </form>
+
+  
+
+      
 
 
     <?php if (Configure::read('Theme.login.show_social')) : ?>
@@ -64,14 +69,7 @@ $this->layout = 'AdminLTE.login'; ?>
         <a href="register.html" class="text-center">Register a new membership</a>
       </p>
     <?php endif; ?>
-
-
-
-
     <!-- /.social-auth-links -->
-
-
-
   </div>
   <!-- /.login-card-body -->
 </div>
